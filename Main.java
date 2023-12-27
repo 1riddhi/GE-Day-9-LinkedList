@@ -13,8 +13,12 @@ public class Main{
 
         linkedList.display();
 
+        System.out.println("Delete 1st two elements");
+
         linkedList.deleteFrom(0);
         linkedList.deleteFrom(0);
+
+        linkedList.display();
 
         System.out.println("Before deleting last element");
         linkedList.display();
@@ -27,5 +31,16 @@ public class Main{
         linkedList.display();
 
         System.out.println("Position of element 30 :"+linkedList.Search(30));
+
+
+        System.out.println("Insert 56,30,40,70 in sorted linkedlist");
+        linkedList.head=null;
+        linkedList.addSorted(56);
+        linkedList.addSorted(30);
+        linkedList.addSorted(40);
+        linkedList.addSorted(70);
+
+        linkedList.display();
+
     }
 }

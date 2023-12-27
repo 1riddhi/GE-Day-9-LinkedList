@@ -1,4 +1,4 @@
-public class LinkedList<T> {
+public class LinkedList<T  extends Comparable<T>> {
     Node<T> head;
     Node<T> temp;
 
@@ -94,6 +94,30 @@ public class LinkedList<T> {
             position++;
         }
         return -1;
+    }
+
+    public void addSorted(T data){
+        Node<T> newNode=new Node<>(data);
+        if (head == null || data instanceof Comparable && ((Comparable<T>) data).compareTo(head.data) < 0) {
+            
+            newNode.next=head;
+            head=newNode;
+            return;
+        }
+        temp=head;
+        Node<T> prevNode=null;
+        while(temp!=null && ((Comparable<T>) data).compareTo(temp.data) >0){
+            prevNode=temp;
+            temp=temp.next;
+        }
+        if (prevNode != null) {
+            prevNode.next = newNode;
+        } else {
+            head = newNode;
+        }
+        newNode.next=temp;
+        return;
+
     }
     
 }
