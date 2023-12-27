@@ -15,6 +15,14 @@ public class Main{
         linkedList.deleteFrom(0);
         linkedList.deleteFrom(0);
 
+        System.out.println("Before deleting last element");
+        linkedList.display();
+
+        int lastPosition=linkedList.size()-1;
+
+        linkedList.deleteFrom(lastPosition);
+        
+        System.out.println("After deleting last element");
         linkedList.display();
     }
 }
