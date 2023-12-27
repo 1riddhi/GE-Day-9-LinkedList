@@ -7,5 +7,10 @@ public class Main{
         linkedList.add(70);
 
         linkedList.display();
+
+        linkedList.insertAt(0,1);
+        linkedList.insertAt(3,1);
+
+        linkedList.display();
     }
 }

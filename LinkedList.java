@@ -1,5 +1,6 @@
 public class LinkedList<T> {
-    Node<T> head,temp;
+    Node<T> head;
+    Node<T> temp;
 
     public LinkedList() {
         this.head = null;
@@ -25,6 +26,40 @@ public class LinkedList<T> {
             temp = temp.next;
         }
         System.out.println();
+    }
+
+    public int size(){
+        temp=head;
+        int length=0;
+        while(temp!=null){
+          length++;
+          temp=temp.next;
+        }
+        return length;
+    }
+
+     public void insertAt(int position, T data) {
+       if(!valid(position)) return ;
+        Node<T> newNode = new Node<>(data);
+        if(position == 0){
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node<T> temp = head;
+            for(int i = 0; i < position - 1; i++){
+                    temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+    } 
+
+    public boolean valid(int position){
+         if(position < 0 || position > size()){
+            System.out.println("Invalid Position");
+            return false;
+        }
+        return true;
     }
 
     
