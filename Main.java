@@ -7,7 +7,8 @@ public class Main{
         linkedList.add(70);
 
         linkedList.display();
-
+        
+        System.out.println("Insert value=1 at 0th position");
         linkedList.insertAt(0,1);
 
         linkedList.display();
@@ -24,5 +25,7 @@ public class Main{
         
         System.out.println("After deleting last element");
         linkedList.display();
+
+        System.out.println("Position of element 30 :"+linkedList.Search(30));
     }
 }

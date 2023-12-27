@@ -83,5 +83,18 @@ public class LinkedList<T> {
         }
     }
 
+    public int Search(T value) {
+        temp = head;
+        int position = 0;
+        while(temp != null){
+            if(temp.data==value){
+                return position;
+            }
+            temp = temp.next;
+            position++;
+        }
+        return -1;
+    }
     
 }
+
