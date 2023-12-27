@@ -9,7 +9,11 @@ public class Main{
         linkedList.display();
 
         linkedList.insertAt(0,1);
-        linkedList.insertAt(3,1);
+
+        linkedList.display();
+
+        linkedList.deleteFrom(0);
+        linkedList.deleteFrom(0);
 
         linkedList.display();
     }

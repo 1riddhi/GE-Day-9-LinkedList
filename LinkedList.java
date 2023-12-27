@@ -45,7 +45,7 @@ public class LinkedList<T> {
             newNode.next = head;
             head = newNode;
         } else {
-            Node<T> temp = head;
+            temp = head;
             for(int i = 0; i < position - 1; i++){
                     temp = temp.next;
             }
@@ -56,10 +56,31 @@ public class LinkedList<T> {
 
     public boolean valid(int position){
          if(position < 0 || position > size()){
-            System.out.println("Invalid Position");
+            System.out.println("Invalid Position !!!");
             return false;
         }
         return true;
+    }
+
+
+    public boolean isEmpty(){
+        return head==null;
+    }
+
+    public void deleteFrom(int position) {
+        if(isEmpty() || !valid(position)){
+            System.out.println("Invalid Position !!!");
+            return;
+        }
+        if(position == 0 ){
+            head = head.next;
+        } else {
+            temp = head;
+            for(int i = 0; i < position - 1; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+        }
     }
 
     
